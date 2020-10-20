@@ -12,5 +12,6 @@ just a practice
 
 collaborating using git (Ruby)
 collaborating using git (Annie)
+trying to create a conflict (Annie)
 
 
