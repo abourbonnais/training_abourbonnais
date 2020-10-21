@@ -1,5 +1,5 @@
 ---
-title: 'Chapter 8: Cleaning'
+title: 'Chapter 8 Cleaning'
 output: html_document
 ---
 
