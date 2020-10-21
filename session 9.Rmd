@@ -38,4 +38,75 @@ annual_esc <- esc %>%
 annual_esc
 ```
 
+##Plotting
+
+```{r}
+ggplot(annual_esc, mapping = aes(x = Species, y = escapement, fill = SASAP.Region)) +
+  geom_col()
+```
+```{r}
+annual_esc %>% 
+  filter(SASAP.Region == "Kodiak") %>% 
+ggplot(aes(x = Year, y = escapement, color = Species)) + 
+    geom_line() +
+    geom_point()
+```
+
+```{r}
+kodiak_esc <- annual_esc %>% 
+  filter(SASAP.Region == "Kodiak")
+```
+
+```{r}
+ggplot(kodiak_esc, aes(x = Year, y = escapement, color = Species)) + 
+    geom_line() +
+    geom_point() +
+    ylab("Escapement") +
+    ggtitle("Kodiak Salmon Escapement") +
+    theme_bw()
+```
+
+```{r}
+my_theme <- theme_classic() + 
+  theme(legend.position = "bottom", legend.title = element_blank())
+```
+
+```{r}
+ggplot(kodiak_esc, aes(x = Year, y = escapement, color = Species)) + 
+    geom_line() +
+    geom_point() +
+    ylab("Escapement") +
+    ggtitle("Kodiak Salmon Escapement") +
+    my_theme
+```
+```{r}
+ggplot(kodiak_esc, aes(x = Year, y = escapement, color = Species)) + 
+    geom_line() +
+    geom_point() +
+    scale_y_continuous(labels = comma) +
+    ylab("Escapement") +
+    ggtitle("Kodiak Salmon Escapement") +
+    my_theme
+```
+
+```{r}
+ggplot(annual_esc, aes(x = Year, y = escapement, color = Species)) + 
+    geom_line() +
+    geom_point() +
+    scale_y_continuous(labels = comma) +
+    facet_wrap(~SASAP.Region, scales = "free_y", ncol = 2) +
+    ylab("Escapement") +
+    my_theme
+```
+#getting rid of grid
+
+```{r}
+locations <- esc %>% 
+  distinct(Location, Latitude, Longitude) %>% 
+  drop_na()
+```
+
+```{r}
+datatable(locations)
+```
 
