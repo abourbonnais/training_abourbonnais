@@ -15,4 +15,5 @@ knitr::opts_chunk$set(echo = TRUE)
 - Animal movement models based on telemetry
 - Data visualization
 
+Look at my cool data!
 [Data tidying](session-9.html)
