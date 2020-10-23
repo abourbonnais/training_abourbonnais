@@ -101,4 +101,9 @@ scatterplot <- function(df, point_size = 2, font_size=9) {
 }
 scatterplot(temps_df, point_size=2, font_size = 16)
 ```
+```{r}
+library(devtools)
+library(usethis)
+library(roxygen2)
+```
 
